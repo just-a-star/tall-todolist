@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('priority');
             $table->dateTime('due_date')->nullable();
             $table->boolean('is_completed')->default(false);
+
             $table->foreignId('user_id')->constrained()->onDelete(('cascade'));
 
 
