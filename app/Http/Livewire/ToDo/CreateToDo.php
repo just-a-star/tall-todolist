@@ -41,7 +41,6 @@ class CreateToDo extends Component
         ]);
 
         // Creation Logic
-
         Todo::create([
             'title' => $this->title,
             'description' => $this->description,

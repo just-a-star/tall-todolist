@@ -27,10 +27,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    // To do list routes
+    Route::get('/to-do-today', function () {
+        return view('to-do-today');
+    })->name('to-do-today');
+
+    Route::get('/to-do-completed', function () {
+        return view('to-do-completed');
+    })->name('to-do-completed');
+
+    Route::get('/create-todo', CreateToDo::class)->name('todos.create');
+
 });
 
-// To do list
 
-Route::get('/create-todo', CreateToDo::class);
+
+
 
 require __DIR__.'/auth.php';
