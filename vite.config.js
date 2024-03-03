@@ -6,9 +6,9 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                "resources/js/date-picker.js",
                 "resources/css/app.css",
                 "resources/js/app.js",
-                "resources/js/pinesui/date-picker.js",
             ],
             refresh: true,
         }),

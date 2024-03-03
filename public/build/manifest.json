@@ -12,9 +12,9 @@
       "assets/app-BODZuBXK.css"
     ]
   },
-  "resources/js/date-picker.js": {
+  "resources/js/pinesui/date-picker.js": {
     "file": "assets/date-picker-l0sNRNKZ.js",
-    "src": "resources/js/date-picker.js",
+    "src": "resources/js/pinesui/date-picker.js",
     "isEntry": true
   }
 }

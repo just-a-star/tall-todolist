@@ -12,9 +12,13 @@
 
                     <livewire:to-do.create-to-do />
 
-                    <livewire:to-do.show-to-do-today>
+                    <livewire:to-do.create-to-do-modal />
 
-                        <livewire:to-do.show-to-do-completed>
+                    <livewire:to-do.show-to-do-today />
+
+                    <livewire:to-do.show-to-do-completed />
+
+
                 </div>
             </div>
         </div>

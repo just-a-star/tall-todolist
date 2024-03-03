@@ -1,4 +1,5 @@
 function datePickerData() {
+    console.log("date-picker.js loaded");
     return {
         datePickerOpen: false,
         datePickerValue: "",
@@ -31,10 +32,6 @@ function datePickerData() {
             );
             this.datePickerDay = day;
             this.datePickerValue = this.datePickerFormatDate(selectedDate);
-
-            this.$refs.datePickerInput.value = this.datePickerValue;
-            Livewire.emit("updateDueDate", this.datePickerValue);
-
             this.datePickerIsSelectedDate(day);
             this.datePickerOpen = false;
         },

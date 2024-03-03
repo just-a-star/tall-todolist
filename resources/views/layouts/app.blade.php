@@ -13,7 +13,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/pinesui/date-picker.js'])
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script src="{{ asset('js/date-picker.js') }}"></script>
     @livewireStyles
 </head>
 

@@ -1,19 +1,16 @@
 <div>
-    {{-- @pushOnce('scripts')
-    <script src="{{ asset('js/date-picker.js')}}"></script>
 
-    @endPushOnce --}}
     <div x-data="datePickerData()" x-init="
-      currentDate = new Date();
-      if (datePickerValue) {
-          currentDate = new Date(Date.parse(datePickerValue));
-      }
-      datePickerMonth = currentDate.getMonth();
-      datePickerYear = currentDate.getFullYear();
-      datePickerDay = currentDate.getDay();
-      datePickerValue = datePickerFormatDate( currentDate );
-      datePickerCalculateDays();
-  " x-cloak>
+    currentDate = new Date();
+    if (datePickerValue) {
+        currentDate = new Date(Date.parse(datePickerValue));
+    }
+    datePickerMonth = currentDate.getMonth();
+    datePickerYear = currentDate.getFullYear();
+    datePickerDay = currentDate.getDay();
+    datePickerValue = datePickerFormatDate( currentDate );
+    datePickerCalculateDays();
+" x-cloak>
         <div class="container mx-auto">
             <div class="w-full mb-5">
                 <label for="datepicker" class="block mb-1 text-sm font-medium text-neutral-500">Due Date</label>
