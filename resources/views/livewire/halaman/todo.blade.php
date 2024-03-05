@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
             {{ __('Today task') }}
@@ -19,12 +19,10 @@
 
                     <livewire:to-do.show-to-do-completed />
 
-
-                    @livewire('to-do.show-to-do-all')
                     {{--
                     <livewire:to-do.edit-to-do /> --}}
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>

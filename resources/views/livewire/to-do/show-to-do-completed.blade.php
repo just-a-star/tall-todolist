@@ -51,13 +51,15 @@
                                                 {{ $todo->description }}
                                             </td>
                                             <td class="px-6 py-4">
-                                                {{ $todo->priority }}
+                                                <span class="{{ $todo->priority == 1 ? 'text-red-500' : ($todo->priority == 2 ? 'text-yellow-500' : 'text-green-500') }}">
+                                                    {{ $todo->priority == 1 ? 'High' : ($todo->priority == 2 ? 'Medium' : 'Low') }}
+                                                </span>
                                             </td>
                                             <td class="px-6 py-4">
-                                                {{ \Carbon\Carbon::parse($todo->due_date)->format('M d, Y') }}
+                                                {{ \Carbon\Carbon::parse($todo->due_date)->diffForHumans()}}
                                             </td>
                                             <td class="px-6 py-4 text-sm font-medium text-left">
-                                                <button wire:click="markAsCompleted({{ $todo->id}})"
+                                                <button wire:click="markAsUncompleted({{ $todo->id}})"
                                                     class="text-green-600 hover:text-green-900">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +68,7 @@
                                                     </svg>
                                                 </button>
                                                 {{-- update todo button --}}
-                                                <button wire:click="edit({{ $todo->id }})"
+                                                <button wire:click="edit({{ 1 }})"
                                                     class="text-indigo-600 hover:text-indigo-900">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

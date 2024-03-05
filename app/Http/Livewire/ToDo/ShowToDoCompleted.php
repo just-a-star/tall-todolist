@@ -8,6 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowToDoCompleted extends Component
 {
+
+    protected $listeners = ['todoListUpdated' => '$refresh'];
+
+    public function markAsUncompleted($id)
+    {
+        Todo::where('id', $id)->update(['is_completed' => false]);
+
+
+        $this->emit('todoListUpdated');
+    }
+
     public function render()
     {
         $completedTodos = Todo::where('user_id', Auth::id())

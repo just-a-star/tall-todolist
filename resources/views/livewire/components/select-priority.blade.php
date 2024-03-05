@@ -1,25 +1,19 @@
 <div>
-    <div x-data="{ selectOpen: false, selectedItem: @entangle('priority') }" class="relative w-48">
-        <label for="priority" class="block mb-1 text-sm font-medium text-neutral-500">Prioritization</label>
-        <button @click="selectOpen = !selectOpen" :class="{ 'bg-blue-500': selectedItem, 'bg-gray-300': !selectedItem }"
-            class="w-full p-2 border rounded-md">
-            <span x-text="selectedItem ? selectedItem : 'Select Priority'"></span>
-        </button>
 
-        <ul x-show="selectOpen" @click.away="selectOpen = false" x-transition
-            class="absolute z-10 w-full mt-2 overflow-auto text-sm bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
-            <template x-for="(item, index) in [
-    { title: 'Do it now', value: 1 },
-    { title: 'Crucial but later', value: 2 },
-    { title: 'Not crucial do now', value: 3 },
-    { title: 'Uncategorized', value: 4 },
-]" :key="index">
-                <li @click="selectedItem = item.value; selectOpen = false; Livewire.emit('updatePriority', item.value)"
-                    class="p-2 cursor-pointer select-none hover:bg-gray-100"
-                    :class="{ 'bg-gray-200': selectedItem === item.value }" x-text="item.title"></li>
+    
+    <div class="relative">
+        <select wire:model="priority"
+            class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-state">
+            <option value="1">High</option>
+            <option value="2">Medium</option>
+            <option value="3">Low</option>
+        </select>
 
-            </template>
-
-        </ul>
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+            {{-- <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg> --}}
+        </div>
     </div>
 </div>

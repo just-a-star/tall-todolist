@@ -5,8 +5,9 @@ namespace App\Http\Livewire\ToDo;
 use Livewire\Component;
 use App\Models\Todo;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
-class CreateToDo extends Component
+class CreateToDoModal extends Component
 {
     public $title = '';
     public $description = '';
@@ -28,10 +29,10 @@ class CreateToDo extends Component
     }
     public function render()
     {
-        return view('livewire.to-do.create-todo');
+        return view('livewire.to-do.create-to-do-modal');
     }
 
-    public function createToDo()
+    public function createToDoModal()
     {
         // dd($this->title, $this->description, $this->priority, $this->due_date);
 
@@ -57,6 +58,7 @@ class CreateToDo extends Component
         $this->reset(['title', 'description', 'priority', 'due_date']);
 
         // emit event
+        $this->emit('todoListUpdated');
 
         session()->flash('message', 'Task successfully created.');
     }
