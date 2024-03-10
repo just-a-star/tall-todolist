@@ -86,7 +86,7 @@
                                                             <span class="ml-2">Today</span>
                                                         </a>
                                                         {{-- All task --}}
-                                                        <a href="{{ route('to-do-today') }}"
+                                                        <a href="{{ route('to-do') }}"
                                                             class="flex items-center w-full px-4 py-2 text-sm font-medium text-gray-900 rounded-md dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 dark:focus:ring-indigo-500">
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                                 viewBox="0 0 24 24" stroke-width="1.5"

@@ -19,23 +19,9 @@ class ShowToDoToday extends Component
     public function edit($id)
 {
     $this->emit('editTodo', $id);
-    dd($id);
+    // dd($id);
 }
 
-
-    public function editTodo($todoId)
-    {
-        dd($todoId);
-        $todo = Todo::findOrFail($todoId);
-        $this->todoId = $todo->id;
-        $this->title = $todo->title;
-        $this->description = $todo->description;
-        $this->priority = $todo->priority;
-        $this->due_date = $todo->due_date;
-
-        // Open the modal after loading the todo
-        $this->dispatchBrowserEvent('edit-todo-modal-open');
-    }
 
     public function markAsCompleted($id)
     {

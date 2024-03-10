@@ -17,6 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script src="{{ asset('js/date-picker.js') }}"></script>
+    <script src="{{ asset('js/filter-date.js') }}"></script>
     @livewireStyles
 </head>
 
