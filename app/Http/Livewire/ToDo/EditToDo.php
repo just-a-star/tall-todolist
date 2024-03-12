@@ -26,9 +26,11 @@ class EditToDo extends Component
         $this->due_date = $todo->due_date;
     }
 
+
     public function edit()
     {
-        // dd($this->todoId);
+        // dd($this->due_date);
+
         $this->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',

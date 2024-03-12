@@ -11,6 +11,12 @@ class ShowToDoCompleted extends Component
 
     protected $listeners = ['todoListUpdated' => '$refresh'];
 
+    public function edit($id)
+{
+    $this->emit('editTodo', $id);
+    // dd($id);
+}
+
     public function markAsUncompleted($id)
     {
         Todo::where('id', $id)->update(['is_completed' => false]);

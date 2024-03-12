@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Log;
 class SelectPriority extends Component
 {
     public $priority = '';
-    public function setPriority($value)
-    {
-        $this->priority = $value;
-        Log::debug("Child Component: Setting priority to {$value}");
-        $this->emitUp('prioritySelected', $this->priority);
-    }
+    // public function setPriority($value)
+    // {
+    //     $this->priority = $value;
+    //     Log::debug("Child Component: Setting priority to {$value}");
+    //     $this->emitUp('prioritySelected', $this->priority);
+    // }
 
 
 
