@@ -5,10 +5,14 @@
             <div class="bg-white shadow-sm overflow-show dark:bg-gray-800 sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @livewire('to-do.show-to-do-all')
+
+
+                    @livewire('to-do.show-kanban-board')
+                    {{-- @livewire('to-do.edit-to-do', ['todo' => $todo], key('edit'.$todo->id)) --}}
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- <h1>bntang</h1> --}}
+
 </div>

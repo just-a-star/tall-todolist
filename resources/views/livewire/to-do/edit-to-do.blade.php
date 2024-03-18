@@ -4,7 +4,7 @@
             display: none;
         }
     </style>
-    <div x-data="{ modalOpen: false }" @keydown.escape.window="modalOpen = false" class="relative z-50 w-auto h-auto">
+    <div x-data="{ modalOpen: false }" @keydown.escape.window="modalOpen = false" class="relative w-auto h-auto">
         <button @click="modalOpen=true"
             class="inline-flex items-center justify-center h-10 text-sm font-medium transition-colors rounded-md hover:bg-neutral-100 focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 active:bg-white disabled:pointer-events-none disabled:opacity-50">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

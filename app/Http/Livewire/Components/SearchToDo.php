@@ -13,11 +13,11 @@ class SearchToDo extends Component
     public function render()
     {
         $results = [];
-        if(strlen($this->search) >= 1){
+        if (strlen($this->search) >= 1) {
             $results = $this->search ? Todo::where(function ($query) {
-                $query->where('title', 'like', '%' . $this->search . '%')
-                      ->orWhere('description', 'like', '%' . $this->search . '%');
-            })->get() : collect([])->limit(5);
+                $query->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($this->search) . '%'])
+                    ->orWhereRaw('LOWER(description) LIKE ?', ['%' . strtolower($this->search) . '%']);
+            })->take(5)->get() : collect([]);
         }
 
         return view('livewire.components.search-to-do', [

@@ -48,23 +48,26 @@
                                     placeholder="Search todo..." x-data>
                             </form>
                             {{-- @if (sizeof($todos) > 0) --}}
-                            <div class="py-0 dropdown-menu d-block">
+                            <div class="py-1 dropdown-menu d-block ">
                                 @foreach ($Todos as $todo)
-                                <div class="px-3 py-1 border-bottom">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-sm text-gray-800">{{ $todo->title }}</span>
+                                <div class="px-3 py-1 mb-2 border border-stone-400 border-bottom">
+                                    <div class="flex-row d-flex">
+                                        <div class="flex flex-row gap-2">
+                                            <span class="flex items-center justify-center text-sm text-gray-800">{{
+                                                $todo->title }}</span>
+                                            <span class="flex flex-row">@livewire('to-do.edit-to-do', ['todo' => $todo],
+                                                key('edit'.$todo->id))</span>
+                                        </div>
                                         <small
                                             class="{{ $todo->priority == 1 ? 'text-red-500' : ($todo->priority == 2 ? 'text-yellow-500' : 'text-green-500') }}">
                                             {{ $todo->priority == 1 ? 'High' : ($todo->priority == 2 ? 'Medium' : 'Low')
                                             }}
                                         </small>
                                         <small class="text-gray-500">{{
-                                            \Carbon\Carbon::parse($todo->due_date)->diffForHumans() }}
-
+                                            \Carbon\Carbon::parse($todo->due_date)->diffForHumans() }}</small>
                                     </div>
                                 </div>
                                 @endforeach
-
                             </div>
                             {{-- @endif --}}
 
